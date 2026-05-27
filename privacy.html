@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flow - Privacy Policy</title>
-  <meta name="description" content="Privacy Policy for Flow - AI Expense Tracker.">
+  <title>Monee - Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Monee - AI Expense Tracker.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -328,7 +328,7 @@
   <div class="shell">
     <header class="topbar">
       <div class="brand">
-        <strong>Flow - AI Expense Tracker</strong>
+        <strong>Monee - AI Expense Tracker</strong>
         <span>Legal pages for GitHub Pages deployment</span>
       </div>
       <nav class="nav" aria-label="Legal navigation">
@@ -341,7 +341,7 @@
       <div class="eyebrow">Privacy Policy</div>
       <h1>Your money log stays intentionally small.</h1>
       <p>
-        Flow is designed as a lightweight, voice-first expense tracker. This Privacy Policy explains what
+        Monee is designed as a lightweight, voice-first expense tracker. This Privacy Policy explains what
         information the app handles, when data stays on your device, when limited data is sent to external
         services to power AI parsing, and what optional syncing features are available.
       </p>
@@ -379,21 +379,21 @@
         <section class="section" id="collect">
           <h2>1. Information we handle</h2>
           <p>
-            Flow handles information that is necessary to create, organize, and sync your expense records.
+            Monee handles information that is necessary to create, organize, and sync your expense records.
             Depending on the features you use, this may include:
           </p>
           <ul>
             <li>Expense and income records you create manually or confirm after AI parsing, including title, amount, category, date, notes, and source text.</li>
-            <li>Receipt photos or other attachments you choose to add to a record. In the current app version, image attachments are stored locally on your device.</li>
+            <li>Receipt photos or other attachments you choose to add to a record. When iCloud Sync is enabled, supported attachment files may also sync through your private Apple iCloud account.</li>
             <li>Text you speak or type when using voice input or manual input.</li>
             <li>Text recognized from receipt images. Receipt OCR itself is performed on-device using Apple frameworks before any text is sent for AI parsing.</li>
             <li>Custom categories, app preferences, notification preferences, profile display name and bio, widget snapshot data, and purchase entitlement state.</li>
-            <li>Limited purchase and transaction status information provided by Apple through StoreKit so the app can unlock Flow Pro features.</li>
+            <li>Limited purchase and transaction status information provided by Apple through StoreKit so the app can unlock Monee Premium features.</li>
           </ul>
           <div class="callout">
             <strong>Important detail about receipts</strong>
             <p>
-              Flow currently performs optical character recognition on-device. When you use AI receipt parsing,
+              Monee currently performs optical character recognition on-device. When you use AI receipt parsing,
               the extracted text may be sent to the parsing service, but the raw receipt image itself is not
               uploaded by the current implementation for parsing.
             </p>
@@ -402,37 +402,37 @@
 
         <section class="section" id="use">
           <h2>2. How we use information</h2>
-          <p>We use information handled by Flow to operate the app and deliver the features you request.</p>
+          <p>We use information handled by Monee to operate the app and deliver the features you request.</p>
           <ul>
             <li>To create, store, edit, display, and delete your records on your device.</li>
             <li>To generate summaries, widgets, charts, and insights from your saved records.</li>
             <li>To request microphone, speech recognition, photo library, camera, notification, and iCloud access only when you use features that require them.</li>
             <li>To process natural-language text and OCR-extracted receipt text through the AI parsing pipeline so the app can suggest structured entries.</li>
-            <li>To sync supported record data through iCloud when you enable iCloud Sync.</li>
-            <li>To confirm and restore your paid Flow Pro access through Apple.</li>
+            <li>To sync supported records, attachment files, custom categories, and selected profile and preference data through iCloud when you enable iCloud Sync.</li>
+            <li>To confirm and restore your paid Monee Premium access through Apple.</li>
           </ul>
         </section>
 
         <section class="section" id="sharing">
           <h2>3. External services and sharing</h2>
           <p>
-            Flow does not sell your personal data. The app does, however, rely on a small number of third-party
+            Monee does not sell your personal data. The app does, however, rely on a small number of third-party
             services when specific features are used.
           </p>
           <ul>
             <li>Apple services. Apple may process microphone, speech recognition, iCloud, notification, and purchase-related data according to Apple's own terms and privacy policies.</li>
-            <li>Cloudflare Workers. AI parsing requests are routed through a Flow-operated Cloudflare Worker endpoint.</li>
+            <li>Cloudflare Workers. AI parsing requests are routed through a Monee-operated Cloudflare Worker endpoint.</li>
             <li>DeepSeek. The current AI parsing backend forwards parsing requests to DeepSeek to transform your text into structured expense data.</li>
           </ul>
           <p>
             In the current implementation, the information shared externally for AI parsing is the text you provide,
             plus related context such as locale, currency, time, and custom category names. Payment card details are
-            handled by Apple, not by Flow.
+            handled by Apple, not by Monee.
           </p>
           <div class="callout">
             <strong>No advertising SDKs in the current version</strong>
             <p>
-              Based on the current app implementation, Flow does not include third-party advertising SDKs and does
+              Based on the current app implementation, Monee does not include third-party advertising SDKs and does
               not include behavioral analytics tracking inside the app.
             </p>
           </div>
@@ -441,12 +441,12 @@
         <section class="section" id="storage">
           <h2>4. Storage, sync, and retention</h2>
           <p>
-            Flow is local-first. Most app data is stored on your device. Some features add optional syncing or
+            Monee is local-first. Most app data is stored on your device. Some features add optional syncing or
             external processing:
           </p>
           <ul>
-            <li>Local storage. Records, settings, custom categories, widgets, and attachments are primarily stored on-device.</li>
-            <li>Optional iCloud sync. If you enable iCloud Sync, supported expense record data may sync through your Apple iCloud account using CloudKit. In the current implementation, some settings and image attachments may remain local.</li>
+            <li>Local storage. Records, settings, custom categories, widgets, avatars, and attachments are stored on-device so the app can work locally.</li>
+            <li>Optional iCloud sync. If you enable iCloud Sync, supported expense record data, attachment files, custom categories, profile details, avatar image, currency selection, and budget settings may sync through your private Apple iCloud account using CloudKit.</li>
             <li>Widget data. Widget snapshot data is stored in a local shared app group so the widget extension can render current summaries.</li>
             <li>Notifications. If you enable reminders, the app stores your notification preference and schedules local notifications on your device.</li>
           </ul>
@@ -460,7 +460,7 @@
         <section class="section" id="choices">
           <h2>5. Your choices</h2>
           <ul>
-            <li>You can use core parts of Flow without creating an account.</li>
+            <li>You can use core parts of Monee without creating an account.</li>
             <li>You can deny microphone, speech recognition, photo library, camera, notifications, or iCloud permissions, but related features may not work.</li>
             <li>You can disable iCloud Sync in Settings. In the current implementation, changes to the iCloud setting apply on next app launch.</li>
             <li>You can review AI-generated results before saving them.</li>
@@ -471,7 +471,7 @@
         <section class="section" id="children">
           <h2>6. Children</h2>
           <p>
-            Flow is not directed to children under 13. If you believe a child has provided personal information through
+            Monee is not directed to children under 13. If you believe a child has provided personal information through
             the app, please use the support contact listed on the App Store page or your product support channel.
           </p>
         </section>
@@ -489,7 +489,7 @@
           <h2>8. Contact</h2>
           <p>
             For privacy questions, data requests, or support, please use the developer contact method listed on the App
-            Store page for Flow - AI Expense Tracker, or replace this paragraph with your dedicated support email before
+            Store page for Monee - AI Expense Tracker, or replace this paragraph with your dedicated support email before
             publishing this page.
           </p>
         </section>
@@ -497,8 +497,8 @@
     </div>
 
     <footer>
-      Flow is a lightweight expense tracking app with voice entry, receipt OCR, AI-assisted parsing, widgets,
-      reminders, optional iCloud sync, and optional Flow Pro purchases. This page is written to match the current
+      Monee is a lightweight expense tracking app with voice entry, receipt OCR, AI-assisted parsing, widgets,
+      reminders, optional iCloud sync, and optional Monee Premium purchases. This page is written to match the current
       app implementation and should be reviewed again if you add analytics, account systems, a web backend,
       collaborative features, or different data providers.
     </footer>
