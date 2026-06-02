@@ -333,7 +333,7 @@
       </div>
       <nav class="nav" aria-label="Legal navigation">
         <a class="active" href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
+        <a href="terms.html">Terms of Use (EULA)</a>
       </nav>
     </header>
 
@@ -343,13 +343,13 @@
       <p>
         Monee is designed as a lightweight, voice-first expense tracker. This Privacy Policy explains what
         information the app handles, when data stays on your device, when limited data is sent to external
-        services to power AI parsing, and what optional syncing features are available.
+        services to power AI parsing and AI reports, and what optional syncing features are available.
       </p>
 
       <div class="meta-grid">
         <div class="meta-card">
           <span>Last updated</span>
-          <strong>May 25, 2026</strong>
+          <strong>June 02, 2026</strong>
         </div>
         <div class="meta-card">
           <span>Accounts</span>
@@ -367,7 +367,7 @@
         <h2>On this page</h2>
         <a href="#collect">1. Information we handle</a>
         <a href="#use">2. How we use information</a>
-        <a href="#sharing">3. External services and sharing</a>
+        <a href="#sharing">3. External services, AI processing, and sharing</a>
         <a href="#storage">4. Storage, sync, and retention</a>
         <a href="#choices">5. Your choices</a>
         <a href="#children">6. Children</a>
@@ -387,15 +387,16 @@
             <li>Receipt photos or other attachments you choose to add to a record. When iCloud Sync is enabled, supported attachment files may also sync through your private Apple iCloud account.</li>
             <li>Text you speak or type when using voice input or manual input.</li>
             <li>Text recognized from receipt images. Receipt OCR itself is performed on-device using Apple frameworks before any text is sent for AI parsing.</li>
-            <li>Custom categories, app preferences, notification preferences, profile display name and bio, widget snapshot data, and purchase entitlement state.</li>
+            <li>When you request an AI spending report, selected expense and income records from the report period, including titles, amounts, dates, categories, currency, summary metrics, budget information, locale, and custom category names.</li>
+            <li>Recurring bill and reminder plans you create, including cadence, next due date, reminder time, lead time, completion or skipped status, custom categories, app preferences, notification preferences, profile display name and bio, widget snapshot data, and purchase entitlement state.</li>
             <li>Limited purchase and transaction status information provided by Apple through StoreKit so the app can unlock Monee Premium features.</li>
           </ul>
           <div class="callout">
             <strong>Important detail about receipts</strong>
             <p>
               Monee currently performs optical character recognition on-device. When you use AI receipt parsing,
-              the extracted text may be sent to the parsing service, but the raw receipt image itself is not
-              uploaded by the current implementation for parsing.
+              the extracted text may be sent to the parsing service after you allow AI data sharing, but the raw
+              receipt image itself is not uploaded by the current implementation for parsing.
             </p>
           </div>
         </section>
@@ -408,13 +409,14 @@
             <li>To generate summaries, widgets, charts, and insights from your saved records.</li>
             <li>To request microphone, speech recognition, photo library, camera, notification, and iCloud access only when you use features that require them.</li>
             <li>To process natural-language text and OCR-extracted receipt text through the AI parsing pipeline so the app can suggest structured entries.</li>
-            <li>To sync supported records, attachment files, custom categories, and selected profile and preference data through iCloud when you enable iCloud Sync.</li>
+            <li>To generate optional AI weekly or monthly spending reports from the records and summary metrics you choose to analyze.</li>
+            <li>To sync supported records, attachment files, recurring bill plans, custom categories, and selected profile and preference data through iCloud when you enable iCloud Sync.</li>
             <li>To confirm and restore your paid Monee Premium access through Apple.</li>
           </ul>
         </section>
 
         <section class="section" id="sharing">
-          <h2>3. External services and sharing</h2>
+          <h2>3. External services, AI processing, and sharing</h2>
           <p>
             Monee does not sell your personal data. The app does, however, rely on a small number of third-party
             services when specific features are used.
@@ -425,9 +427,22 @@
             <li>DeepSeek. The current AI parsing backend forwards parsing requests to DeepSeek to transform your text into structured expense data.</li>
           </ul>
           <p>
-            In the current implementation, the information shared externally for AI parsing is the text you provide,
-            plus related context such as locale, currency, time, and custom category names. Payment card details are
-            handled by Apple, not by Monee.
+            Before Monee sends data to the AI processing pipeline, the app displays an AI Data Sharing Consent screen
+            that explains what data may be sent, identifies the processing services, describes the purpose of processing,
+            and lets you decline. You can withdraw AI data sharing consent later in Settings.
+          </p>
+          <p>
+            In the current implementation, the information shared externally for AI parsing may include the text you
+            speak or type, OCR text recognized from receipt images, merchant names, amounts, dates, categories, notes,
+            currency, locale, custom category names, current time, and an anonymous install ID. For AI reports, Monee
+            may send expense and income records from the selected report period, including titles, amounts, dates,
+            categories, currency, summary metrics, budget information, locale, custom category names, and an anonymous
+            install ID. Payment card details are handled by Apple, not by Monee.
+          </p>
+          <p>
+            We expect the third-party services we use for AI processing and infrastructure to protect data under their
+            applicable terms, privacy commitments, and security practices. We do not use third-party AI services to
+            sell your personal data or serve behavioral advertising.
           </p>
           <div class="callout">
             <strong>No advertising SDKs in the current version</strong>
@@ -445,10 +460,10 @@
             external processing:
           </p>
           <ul>
-            <li>Local storage. Records, settings, custom categories, widgets, avatars, and attachments are stored on-device so the app can work locally.</li>
-            <li>Optional iCloud sync. If you enable iCloud Sync, supported expense record data, attachment files, custom categories, profile details, avatar image, currency selection, and budget settings may sync through your private Apple iCloud account using CloudKit.</li>
+            <li>Local storage. Records, recurring bill plans, reminder settings, custom categories, widgets, avatars, and attachments are stored on-device so the app can work locally.</li>
+            <li>Optional iCloud sync. If you enable iCloud Sync, supported expense record data, attachment files, recurring bill plans, custom categories, profile details, avatar image, currency selection, and budget settings may sync through your private Apple iCloud account using CloudKit.</li>
             <li>Widget data. Widget snapshot data is stored in a local shared app group so the widget extension can render current summaries.</li>
-            <li>Notifications. If you enable reminders, the app stores your notification preference and schedules local notifications on your device.</li>
+            <li>Notifications. If you enable reminders, the app stores your notification preferences and recurring bill reminder schedule on your device and uses them to schedule local notifications.</li>
           </ul>
           <p>
             You can delete records from inside the app, disable notifications, disable iCloud Sync, or uninstall the
@@ -463,6 +478,7 @@
             <li>You can use core parts of Monee without creating an account.</li>
             <li>You can deny microphone, speech recognition, photo library, camera, notifications, or iCloud permissions, but related features may not work.</li>
             <li>You can disable iCloud Sync in Settings. In the current implementation, changes to the iCloud setting apply on next app launch.</li>
+            <li>You can decline AI data sharing before AI parsing or AI report generation, and you can withdraw AI data sharing consent later in Settings.</li>
             <li>You can review AI-generated results before saving them.</li>
             <li>You can delete records and clear stored data from within the app.</li>
           </ul>
