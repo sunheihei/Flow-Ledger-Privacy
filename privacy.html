@@ -349,7 +349,7 @@
       <div class="meta-grid">
         <div class="meta-card">
           <span>Last updated</span>
-          <strong>June 24, 2026</strong>
+          <strong>June 29, 2026</strong>
         </div>
         <div class="meta-card">
           <span>Accounts</span>
@@ -394,9 +394,9 @@
           <div class="callout">
             <strong>Important detail about receipts</strong>
             <p>
-              SaySpend currently performs optical character recognition on-device. When you use AI receipt parsing,
-              the extracted text may be sent to the parsing service after you allow AI data sharing, but the raw
-              receipt image itself is not uploaded by the current implementation for parsing.
+              SaySpend performs optical character recognition on-device. When you use AI receipt or bill parsing,
+              the extracted text and a compressed copy of the receipt, bill, or payment screenshot you choose to scan
+              may be sent to the parsing service after you allow AI data sharing.
             </p>
           </div>
         </section>
@@ -424,7 +424,7 @@
           <ul>
             <li>Apple services. Apple may process microphone, speech recognition, iCloud, notification, and purchase-related data according to Apple's own terms and privacy policies.</li>
             <li>Cloudflare Workers. AI parsing requests are routed through a SaySpend-operated Cloudflare Worker endpoint.</li>
-            <li>DeepSeek. The current AI parsing backend forwards parsing requests to DeepSeek to transform your text into structured expense data.</li>
+            <li>Xiaomi MiMo. The current AI parsing backend forwards parsing requests to Xiaomi MiMo to transform text and, for receipt or bill scanning, compressed images into structured expense data.</li>
           </ul>
           <p>
             Before SaySpend sends data to the AI processing pipeline, the app displays an AI Data Sharing Consent screen
@@ -433,8 +433,9 @@
           </p>
           <p>
             In the current implementation, the information shared externally for AI parsing may include the text you
-            speak or type, OCR text recognized from receipt images, merchant names, amounts, dates, categories, notes,
-            currency, locale, custom category names, current time, and an anonymous install ID. For AI reports, SaySpend
+            speak or type, compressed receipt or bill images you choose to scan, OCR text recognized from those images,
+            merchant names, amounts, dates, categories, notes, currency, locale, custom category names, current time,
+            and an anonymous install ID. For AI reports, SaySpend
             may send expense and income records from the selected report period, including titles, amounts, dates,
             categories, currency, summary metrics, budget information, locale, custom category names, and an anonymous
             install ID. Payment card details are handled by Apple, not by SaySpend.
