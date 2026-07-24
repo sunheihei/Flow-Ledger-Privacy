@@ -342,14 +342,15 @@
       <h1>Your money log stays intentionally small.</h1>
       <p>
         SaySpend is designed as a lightweight, voice-first expense tracker. This Privacy Policy explains what
-        information the app handles, when data stays on your device, when limited data is sent to external
-        services to power AI parsing and AI reports, and what optional syncing features are available.
+        information the iOS and Android versions handle, when data stays on your device, when limited data is sent
+        to external services to power AI parsing and AI reports, and what platform-specific sync or purchase features
+        are available.
       </p>
 
       <div class="meta-grid">
         <div class="meta-card">
           <span>Last updated</span>
-          <strong>June 29, 2026</strong>
+          <strong>July 23, 2026</strong>
         </div>
         <div class="meta-card">
           <span>Accounts</span>
@@ -357,7 +358,7 @@
         </div>
         <div class="meta-card">
           <span>Current app model</span>
-          <strong>Local-first storage, optional iCloud sync, StoreKit purchases.</strong>
+          <strong>Local-first storage; optional iCloud sync on iOS; platform-managed purchases only where enabled.</strong>
         </div>
       </div>
     </section>
@@ -379,24 +380,25 @@
         <section class="section" id="collect">
           <h2>1. Information we handle</h2>
           <p>
-            SaySpend handles information that is necessary to create, organize, and sync your expense records.
-            Depending on the features you use, this may include:
+            SaySpend handles information that is necessary to create, organize, and, on supported platforms, sync your
+            expense records. Depending on the platform and features you use, this may include:
           </p>
           <ul>
             <li>Expense and income records you create manually or confirm after AI parsing, including title, amount, category, date, notes, and source text.</li>
-            <li>Receipt photos or other attachments you choose to add to a record. When iCloud Sync is enabled, supported attachment files may also sync through your private Apple iCloud account.</li>
-            <li>Text you speak or type when using voice input or manual input.</li>
-            <li>Text recognized from receipt images. Receipt OCR itself is performed on-device using Apple frameworks before any text is sent for AI parsing.</li>
+            <li>Receipt photos or other attachments you choose to add to a record. On iOS, supported attachment files may sync through your private Apple iCloud account when iCloud Sync is enabled.</li>
+            <li>Text you speak or type when using voice input or manual input. On Android, SaySpend receives the speech-recognition result from the device's speech-recognition service; SaySpend does not itself upload raw microphone audio to its AI parsing service.</li>
+            <li>Text recognized from receipt images. On iOS, receipt OCR may be performed on-device using Apple frameworks before text is sent for AI parsing. On Android, the current receipt-scanning flow sends the compressed receipt image you choose directly to the AI parsing service after you allow AI data sharing; the Android app does not perform on-device OCR before that request.</li>
             <li>When you request an AI spending report, selected expense and income records from the report period, including titles, amounts, dates, categories, currency, summary metrics, budget information, locale, and custom category names.</li>
             <li>Recurring bill and reminder plans you create, including cadence, next due date, reminder time, lead time, completion or skipped status, custom categories, app preferences, notification preferences, profile display name and bio, widget snapshot data, and purchase entitlement state.</li>
-            <li>Limited purchase and transaction status information provided by Apple through StoreKit so the app can unlock SaySpend Premium features.</li>
+            <li>Limited purchase and transaction status information provided by Apple or Google through the applicable app-store billing service when a Premium purchase flow is enabled for that platform and build.</li>
           </ul>
           <div class="callout">
             <strong>Important detail about receipts</strong>
             <p>
-              SaySpend performs optical character recognition on-device. When you use AI receipt or bill parsing,
-              the extracted text and a compressed copy of the receipt, bill, or payment screenshot you choose to scan
-              may be sent to the parsing service after you allow AI data sharing.
+              On iOS, SaySpend may perform optical character recognition on-device before AI parsing. On Android, the
+              current receipt-scanning flow sends the compressed receipt, bill, or payment screenshot you choose to
+              scan directly to the parsing service after you allow AI data sharing. In either case, do not scan a
+              document unless you are comfortable with the information in it being processed for the requested feature.
             </p>
           </div>
         </section>
@@ -407,11 +409,11 @@
           <ul>
             <li>To create, store, edit, display, and delete your records on your device.</li>
             <li>To generate summaries, widgets, charts, and insights from your saved records.</li>
-            <li>To request microphone, speech recognition, photo library, camera, notification, and iCloud access only when you use features that require them.</li>
-            <li>To process natural-language text and OCR-extracted receipt text through the AI parsing pipeline so the app can suggest structured entries.</li>
+            <li>To request microphone, speech recognition, photo-library or media access, camera, notification, and, on iOS, iCloud access only when you use features that require them.</li>
+            <li>To process natural-language text, receipt text, and, on Android, receipt images you choose to scan through the AI parsing pipeline so the app can suggest structured entries.</li>
             <li>To generate optional AI weekly or monthly spending reports from the records and summary metrics you choose to analyze.</li>
-            <li>To sync supported records, attachment files, recurring bill plans, custom categories, and selected profile and preference data through iCloud when you enable iCloud Sync.</li>
-            <li>To confirm and restore your paid SaySpend Premium access through Apple.</li>
+            <li>To sync supported records, attachment files, recurring bill plans, custom categories, and selected profile and preference data through iCloud when you enable iCloud Sync on iOS. The current Android version does not offer cross-device cloud sync.</li>
+            <li>To confirm and restore paid SaySpend Premium access through the applicable Apple or Google app-store billing service when that service is enabled for your platform and build.</li>
           </ul>
         </section>
 
@@ -422,7 +424,8 @@
             services when specific features are used.
           </p>
           <ul>
-            <li>Apple services. Apple may process microphone, speech recognition, iCloud, notification, and purchase-related data according to Apple's own terms and privacy policies.</li>
+            <li>Apple services. On iOS, Apple may process microphone, speech recognition, iCloud, notification, and purchase-related data according to Apple's own terms and privacy policies.</li>
+            <li>Android and device services. On Android, Android system services and the speech-recognition, camera, photo-picker, notification, or app-store provider selected on your device may process data needed to provide those features, subject to their own terms and privacy policies.</li>
             <li>Cloudflare Workers. AI parsing requests are routed through a SaySpend-operated Cloudflare Worker endpoint.</li>
             <li>Xiaomi MiMo. The current AI parsing backend forwards parsing requests to Xiaomi MiMo to transform text and, for receipt or bill scanning, compressed images into structured expense data.</li>
           </ul>
@@ -433,12 +436,12 @@
           </p>
           <p>
             In the current implementation, the information shared externally for AI parsing may include the text you
-            speak or type, compressed receipt or bill images you choose to scan, OCR text recognized from those images,
+            speak or type, compressed receipt or bill images you choose to scan, OCR text recognized from those images when available,
             merchant names, amounts, dates, categories, notes, currency, locale, custom category names, current time,
             and an anonymous install ID. For AI reports, SaySpend
             may send expense and income records from the selected report period, including titles, amounts, dates,
             categories, currency, summary metrics, budget information, locale, custom category names, and an anonymous
-            install ID. Payment card details are handled by Apple, not by SaySpend.
+            install ID. Payment card details are handled by the applicable app-store billing provider, not by SaySpend.
           </p>
           <p>
             We expect the third-party services we use for AI processing and infrastructure to protect data under their
@@ -461,15 +464,15 @@
             external processing:
           </p>
           <ul>
-            <li>Local storage. Records, recurring bill plans, reminder settings, custom categories, widgets, avatars, and attachments are stored on-device so the app can work locally.</li>
-            <li>Optional iCloud sync. If you enable iCloud Sync, supported expense record data, attachment files, recurring bill plans, custom categories, profile details, avatar image, currency selection, and budget settings may sync through your private Apple iCloud account using CloudKit.</li>
-            <li>Widget data. Widget snapshot data is stored in a local shared app group so the widget extension can render current summaries.</li>
+            <li>Local storage. Records, recurring bill plans, reminder settings, custom categories, widgets, avatars, attachments, and app preferences are stored on-device so the app can work locally. On Android, the current version stores this information locally and does not provide cross-device cloud sync.</li>
+            <li>Optional iCloud sync on iOS. If you enable iCloud Sync, supported expense record data, attachment files, recurring bill plans, custom categories, profile details, avatar image, currency selection, and budget settings may sync through your private Apple iCloud account using CloudKit.</li>
+            <li>Widget data. Widget snapshot data is stored locally so the relevant iOS or Android widget can render current summaries.</li>
             <li>Notifications. If you enable reminders, the app stores your notification preferences and recurring bill reminder schedule on your device and uses them to schedule local notifications.</li>
           </ul>
           <p>
             You can delete records from inside the app, disable notifications, disable iCloud Sync, or uninstall the
-            app. Copies that are stored or processed by Apple or other service providers may be retained under their
-            own policies for a limited time.
+            app. Copies that are stored or processed by Apple, Google, device-service providers, or other service
+            providers may be retained under their own policies for a limited time.
           </p>
         </section>
 
@@ -477,8 +480,8 @@
           <h2>5. Your choices</h2>
           <ul>
             <li>You can use core parts of SaySpend without creating an account.</li>
-            <li>You can deny microphone, speech recognition, photo library, camera, notifications, or iCloud permissions, but related features may not work.</li>
-            <li>You can disable iCloud Sync in Settings. In the current implementation, changes to the iCloud setting apply on next app launch.</li>
+            <li>You can deny microphone, speech recognition, photo-library or media access, camera, notifications, or iCloud permissions, but related features may not work.</li>
+            <li>On iOS, you can disable iCloud Sync in Settings. In the current implementation, changes to the iCloud setting apply on next app launch.</li>
             <li>You can decline AI data sharing before AI parsing or AI report generation, and you can withdraw AI data sharing consent later in Settings.</li>
             <li>You can review AI-generated results before saving them.</li>
             <li>You can delete records and clear stored data from within the app.</li>
@@ -489,7 +492,8 @@
           <h2>6. Children</h2>
           <p>
             SaySpend is not directed to children under 13. If you believe a child has provided personal information through
-            the app, please use the support contact listed on the App Store page or your product support channel.
+            the app, please use the support contact listed on the SaySpend product page in the Apple App Store or
+            Google Play, as applicable, or your product support channel.
           </p>
         </section>
 
@@ -505,18 +509,18 @@
         <section class="section" id="contact">
           <h2>8. Contact</h2>
           <p>
-            For privacy questions, data requests, or support, please use the developer contact method listed on the App
-            Store page for SaySpend - AI Expense Tracker.
+            For privacy questions, data requests, or support, please use the developer contact method listed on the
+            SaySpend product page in the Apple App Store or Google Play, as applicable.
           </p>
         </section>
       </main>
     </div>
 
     <footer>
-      SaySpend is a lightweight expense tracking app with voice entry, receipt OCR, AI-assisted parsing, widgets,
-      reminders, optional iCloud sync, and optional SaySpend Premium purchases. This page is written to match the current
-      app implementation and should be reviewed again if you add analytics, account systems, a web backend,
-      collaborative features, or different data providers.
+      SaySpend is a lightweight expense tracking app with voice entry, receipt scanning, AI-assisted parsing, widgets,
+      reminders, optional iCloud sync on iOS, and optional platform-managed SaySpend Premium purchases where enabled.
+      This page is written to match the current app implementation and should be reviewed again if you add analytics,
+      account systems, Android cloud sync, a web backend, collaborative features, or different data providers.
     </footer>
   </div>
 </body>
