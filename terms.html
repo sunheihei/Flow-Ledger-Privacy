@@ -343,13 +343,14 @@
       <p>
         These Terms of Use, including this End User License Agreement (EULA), govern your use of SaySpend - AI Expense
         Tracker. They are written to match the current app implementation, including voice input, receipt OCR,
-        AI-assisted parsing, widgets, reminders, optional iCloud sync, and SaySpend Premium in-app purchases.
+        AI-assisted parsing, widgets, reminders, optional iCloud sync on iOS, and SaySpend Premium in-app purchases
+        where they are enabled for your platform and build.
       </p>
 
       <div class="meta-grid">
         <div class="meta-card">
           <span>Last updated</span>
-          <strong>June 29, 2026</strong>
+          <strong>July 23, 2026</strong>
         </div>
         <div class="meta-card">
           <span>License model</span>
@@ -385,9 +386,9 @@
             do not agree, do not use the app.
           </p>
           <p>
-            If you downloaded SaySpend through the Apple App Store, your use is also subject to Apple's applicable
-            platform terms, including StoreKit billing rules, Apple Media Services Terms and Conditions, and any
-            Apple-mandated end user license terms.
+            If you downloaded SaySpend through the Apple App Store or Google Play, your use is also subject to the
+            applicable platform terms. These may include Apple Media Services and StoreKit terms on iOS, or Google Play
+            terms and Google Play Billing terms on Android.
           </p>
         </section>
 
@@ -407,12 +408,13 @@
         <section class="section" id="features">
           <h2>3. App features and AI output</h2>
           <p>
-            SaySpend offers manual entry, voice input, receipt OCR, AI-assisted parsing, records, insights, widgets,
-            notifications, and optional iCloud sync. Some SaySpend Premium features may be gated behind a paid plan.
+            SaySpend offers manual entry, voice input, receipt scanning, AI-assisted parsing, records, insights,
+            widgets, notifications, and optional iCloud sync on iOS. Some SaySpend Premium features may be gated
+            behind a paid plan.
           </p>
           <ul>
-            <li>Voice input and speech recognition depend on Apple permissions and platform availability.</li>
-            <li>Receipt OCR is currently performed on-device. Parsed receipt text and compressed receipt, bill, or payment screenshot images you choose to scan may then be sent to the AI parsing service.</li>
+            <li>Voice input and speech recognition depend on device permissions and the speech-recognition service available on your iOS or Android device.</li>
+            <li>On iOS, receipt OCR may be performed on-device before parsing. On Android, the current scanning flow may send the compressed receipt, bill, or payment screenshot image you choose directly to the AI parsing service after you allow AI data sharing.</li>
             <li>AI-assisted parsing is intended to save time, not to replace your judgment.</li>
           </ul>
           <div class="callout">
@@ -434,7 +436,7 @@
           <ul>
             <li>You are responsible for the content you enter, import, speak, or attach to records.</li>
             <li>You represent that you have the rights needed to use any receipts, screenshots, photos, or other content you add to the app.</li>
-            <li>You are responsible for maintaining the security of your device, Apple ID, iCloud account, and access to any synced data.</li>
+            <li>You are responsible for maintaining the security of your device, Apple ID, Google account where applicable, iCloud account, and access to any synced data.</li>
             <li>You agree not to use the app for unlawful, abusive, infringing, fraudulent, or harmful purposes.</li>
             <li>You agree not to upload or submit content that you do not have the right to process.</li>
           </ul>
@@ -443,22 +445,23 @@
         <section class="section" id="pro">
           <h2>5. SaySpend Premium purchases and subscriptions</h2>
           <p>
-            SaySpend may offer paid SaySpend Premium plans through Apple's in-app purchase system. In the current implementation,
-            available product types may include monthly, yearly, and lifetime options, depending on what is configured
-            and offered in your region or build.
+            SaySpend may offer paid SaySpend Premium plans through Apple's in-app purchase system or Google Play Billing
+            when the applicable purchase flow is enabled. Available product types may include monthly, yearly, and
+            lifetime options, depending on what is configured and offered in your region, storefront, or build.
           </p>
           <p>
-            SaySpend Premium Monthly and SaySpend Premium Yearly are auto-renewable subscriptions. SaySpend Premium Lifetime,
-            if offered, is a one-time purchase and does not renew. The exact subscription titles, durations, prices,
-            and included features are shown in the app before purchase and may vary by country, region, currency,
-            taxes, and App Store configuration.
+            SaySpend Premium Monthly and SaySpend Premium Yearly, if offered, are auto-renewable subscriptions.
+            SaySpend Premium Lifetime, if offered, is a one-time purchase and does not renew. The exact subscription
+            titles, durations, prices, and included features are shown in the app before purchase and may vary by
+            country, region, currency, taxes, storefront, and build configuration. The current Android build may show
+            a Paywall before Google Play purchases or purchase restoration are enabled; no payment can be completed in
+            that build until Google Play Billing is enabled and a purchase is successfully verified.
           </p>
           <ul>
-            <li>Payment is charged to your Apple ID at confirmation of purchase.</li>
-            <li>Auto-renewable subscriptions renew automatically unless canceled at least 24 hours before the end of the current subscription period.</li>
-            <li>Your Apple ID may be charged for renewal within 24 hours before the end of the current subscription period.</li>
-            <li>You can manage or cancel subscriptions in your App Store account settings after purchase.</li>
-            <li>Billing, renewal, cancellation, restoration, and refunds are handled by Apple under your App Store account terms and applicable law.</li>
+            <li>Payment is charged through the storefront account you use to confirm the purchase, such as your Apple ID or Google account.</li>
+            <li>Auto-renewable subscriptions renew automatically unless canceled under the cancellation rules shown by the applicable storefront before the current subscription period ends.</li>
+            <li>You can manage or cancel subscriptions in your Apple App Store or Google Play account settings after purchase.</li>
+            <li>Billing, renewal, cancellation, restoration, and refunds are handled by the applicable storefront under its terms and applicable law.</li>
             <li>We do not receive your full payment card information.</li>
             <li>Access to SaySpend Premium features may depend on successful purchase verification and active entitlement status.</li>
             <li>If a purchase is pending, canceled, refunded, revoked, or expired, Premium access may be delayed, limited, or removed.</li>
@@ -472,12 +475,13 @@
           <h2>6. Availability and changes</h2>
           <p>
             We may add, remove, suspend, or change app features at any time. The current AI processing pipeline uses a SaySpend-operated Cloudflare Worker and Xiaomi MiMo, and this may change over time. This includes changes to AI providers,
-            widget behavior, notification settings, storage behavior, iCloud support, pricing, product packaging, or
-            free-versus-paid feature boundaries.
+            widget behavior, notification settings, storage behavior, iCloud support on iOS, Android feature support,
+            pricing, product packaging, or free-versus-paid feature boundaries.
           </p>
           <p>
             We do not guarantee that the app or any feature will always be available, uninterrupted, secure, or error-free.
-            Some features depend on Apple services, network access, third-party providers, or device capabilities.
+            Some features depend on Apple, Android, Google, or other device services, network access, third-party
+            providers, or device capabilities.
           </p>
         </section>
 
@@ -522,17 +526,18 @@
         <section class="section" id="contact">
           <h2>10. Contact</h2>
           <p>
-            For questions about these Terms, please use the developer contact method listed on the App Store page for
-            SaySpend - AI Expense Tracker.
+            For questions about these Terms, please use the developer contact method listed on the SaySpend product page
+            in the Apple App Store or Google Play, as applicable.
           </p>
         </section>
       </main>
     </div>
 
     <footer>
-      These Terms are intended for the current app scope: local-first expense tracking, optional iCloud sync,
-      AI-assisted parsing via a SaySpend-operated backend and Xiaomi MiMo, and Apple-managed in-app purchases. If you later add web
-      accounts, team workspaces, analytics, export APIs, or broader commercial use cases, review and update this page.
+      These Terms are intended for the current app scope: local-first expense tracking, optional iCloud sync on iOS,
+      AI-assisted parsing via a SaySpend-operated backend and Xiaomi MiMo, and platform-managed in-app purchases where
+      enabled. If you later add web accounts, team workspaces, analytics, Android cloud sync, export APIs, or broader
+      commercial use cases, review and update this page.
     </footer>
   </div>
 </body>
