@@ -350,7 +350,7 @@
       <div class="meta-grid">
         <div class="meta-card">
           <span>Last updated</span>
-          <strong>July 23, 2026</strong>
+          <strong>September 7, 2026</strong>
         </div>
         <div class="meta-card">
           <span>Accounts</span>
@@ -387,6 +387,7 @@
             <li>Expense and income records you create manually or confirm after AI parsing, including title, amount, category, date, notes, and source text.</li>
             <li>Receipt photos or other attachments you choose to add to a record. On iOS, supported attachment files may sync through your private Apple iCloud account when iCloud Sync is enabled.</li>
             <li>Text you speak or type when using voice input or manual input. On Android, Centee receives the speech-recognition result from the device's speech-recognition service; Centee does not itself upload raw microphone audio to its AI parsing service.</li>
+            <li>Clipboard text on iOS, only when you enable Clipboard Suggestions or explicitly use the paste-and-recognize action. When automatic suggestions are enabled, Centee first checks on-device whether the clipboard resembles money-related text. If iOS allows access, the relevant clipboard text may be used for the requested AI recognition. Centee does not maintain a clipboard history.</li>
             <li>Text recognized from receipt images. On iOS, receipt OCR may be performed on-device using Apple frameworks before text is sent for AI parsing. On Android, the current receipt-scanning flow sends the compressed receipt image you choose directly to the AI parsing service after you allow AI data sharing; the Android app does not perform on-device OCR before that request.</li>
             <li>When you request an AI spending report, selected expense and income records from the report period, including titles, amounts, dates, categories, currency, summary metrics, budget information, locale, and custom category names.</li>
             <li>Recurring bill and reminder plans you create, including cadence, next due date, reminder time, lead time, completion or skipped status, custom categories, app preferences, notification preferences, profile display name and bio, widget snapshot data, and purchase entitlement state.</li>
@@ -410,6 +411,7 @@
             <li>To create, store, edit, display, and delete your records on your device.</li>
             <li>To generate summaries, widgets, charts, and insights from your saved records.</li>
             <li>To request microphone, speech recognition, photo-library or media access, camera, notification, and, on iOS, iCloud access only when you use features that require them.</li>
+            <li>On iOS, when Clipboard Suggestions is enabled, to check on-device whether the clipboard contains text that resembles a money amount. This detection step does not read or send the full clipboard text to Centee's servers. If iOS permits access, the clipboard text can then follow the same AI parsing path as other text input.</li>
             <li>To process natural-language text, receipt text, and, on Android, receipt images you choose to scan through the AI parsing pipeline so the app can suggest structured entries.</li>
             <li>To generate optional AI weekly or monthly spending reports from the records and summary metrics you choose to analyze.</li>
             <li>To sync supported records, attachment files, recurring bill plans, custom categories, and selected profile and preference data through iCloud when you enable iCloud Sync on iOS. The current Android version does not offer cross-device cloud sync.</li>
@@ -436,7 +438,7 @@
           </p>
           <p>
             In the current implementation, the information shared externally for AI parsing may include the text you
-            speak or type, compressed receipt or bill images you choose to scan, OCR text recognized from those images when available,
+            speak, type, or allow Centee to read from the iOS clipboard for the requested recognition, compressed receipt or bill images you choose to scan, OCR text recognized from those images when available,
             merchant names, amounts, dates, categories, notes, currency, locale, custom category names, current time,
             and an anonymous install ID. For AI reports, Centee
             may send expense and income records from the selected report period, including titles, amounts, dates,
@@ -467,6 +469,7 @@
             <li>Local storage. Records, recurring bill plans, reminder settings, custom categories, widgets, avatars, attachments, and app preferences are stored on-device so the app can work locally. On Android, the current version stores this information locally and does not provide cross-device cloud sync.</li>
             <li>Optional iCloud sync on iOS. If you enable iCloud Sync, supported expense record data, attachment files, recurring bill plans, custom categories, profile details, avatar image, currency selection, and budget settings may sync through your private Apple iCloud account using CloudKit.</li>
             <li>Widget data. Widget snapshot data is stored locally so the relevant iOS or Android widget can render current summaries.</li>
+            <li>Clipboard data. Centee does not keep a clipboard history. Clipboard text used for recognition is held only as needed for the requested flow; if you confirm a record, the resulting record is stored like other records. Copies sent to external AI or infrastructure providers may be retained under their own policies for a limited time.</li>
             <li>Notifications. If you enable reminders, the app stores your notification preferences and recurring bill reminder schedule on your device and uses them to schedule local notifications.</li>
           </ul>
           <p>
@@ -481,6 +484,7 @@
           <ul>
             <li>You can use core parts of Centee without creating an account.</li>
             <li>You can deny microphone, speech recognition, photo-library or media access, camera, notifications, or iCloud permissions, but related features may not work.</li>
+            <li>On iOS, you can disable Clipboard Suggestions in Settings. When it is disabled, Centee does not run automatic clipboard detection when the app opens. The separate paste-and-recognize action reads clipboard text only when you explicitly use it and iOS allows access.</li>
             <li>On iOS, you can disable iCloud Sync in Settings. In the current implementation, changes to the iCloud setting apply on next app launch.</li>
             <li>You can decline AI data sharing before AI parsing or AI report generation, and you can withdraw AI data sharing consent later in Settings.</li>
             <li>You can review AI-generated results before saving them.</li>
